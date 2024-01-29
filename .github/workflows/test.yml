@@ -5,7 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download code
-        uses: actions/checkout@v3
+        uses: actions/checkout
+      - name: Install Node
+        uses: actions/setup-node
+        with:
+          node-version: '20'
       - name: Install Deps
         run: npm ci
       - name: Run Tests
